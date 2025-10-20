@@ -1,8 +1,8 @@
-// models/db.js
 import pg from 'pg';
 import dotenv from 'dotenv';
 
-dotenv.config({ override: true }); // ✅ overwrite if already defined
+// Allow overwriting if variables already exist (avoids warning)
+dotenv.config({ override: true });
 
 const { Pool } = pg;
 
@@ -19,4 +19,3 @@ pool.connect()
   .catch(err => console.error('❌ Database connection error:', err));
 
 export default pool;
-
